@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Main from '../views/Main.vue'
+import VideoList from '../views/video/List.vue'
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
         name: 'home',
         path: '/',
         component: Home,
+      },
+      {
+        name: 'videoList',
+        path: '/video/list',
+        component: VideoList,
       }
     ]
   },

@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width="200px">
-      <el-menu :default-active="$route.path" router>
+      <el-menu :default-active="$route.path" style="height: 100vh;" router>
         <el-submenu v-for="(item ,index) in menu.items" 
           :key="`item-${item.title}-${index}`"
           :index="`${index+1}`"
@@ -51,7 +51,7 @@ export default defineComponent({
               },
               {
                 title: '分P管理',
-                path: '/video/list',
+                path: '/video/manage',
               },
             ]
           },
@@ -75,5 +75,8 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
+  body {
+    margin: 0;
+  }
 </style>
