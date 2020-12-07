@@ -12,7 +12,8 @@ import { defineComponent }from 'vue';
 export default defineComponent({
   name: 'VideoList',
   data() {
-    return {}
+    return {
+    }
   },
 })
 </script>
