@@ -2,7 +2,7 @@ import axios, { AxiosPromise } from 'axios';
 
 const instance = axios.create({ timeout: 1000 * 10 })
 instance.defaults.baseURL = 'http://localhost:3000'
-instance.defaults.withCredentials = true
+// instance.defaults.withCredentials = true
 
 type TypeofAxiosMethod = 'get' | 'GET' | 'POST' | 'post'
 

@@ -4,6 +4,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AdminModule);
+  // 允许跨域
+  app.enableCors();
 
   // SWAGGER文档
   const options = new DocumentBuilder()
