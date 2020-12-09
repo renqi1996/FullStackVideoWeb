@@ -7,17 +7,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent }from 'vue';
+import { defineComponent, reactive, toRefs }from 'vue';
 import request from '../../utils/api/axios';
 
 export default defineComponent({
   name: 'VideoList',
-  props: {
-    msg: String,
-  }, 
-  data() {
+  setup() {
+    const data = reactive({
+      tempList: [],
+      // Function can write here
+    })
+    const refData = toRefs(data);
+
     return {
-      count: {},
+      ...refData
     }
   },
   methods: {
