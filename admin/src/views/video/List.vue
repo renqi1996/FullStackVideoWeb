@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs }from 'vue';
+import { defineComponent, onUnmounted, reactive, toRefs }from 'vue';
 import request from '../../utils/api/axios';
 
 export default defineComponent({
@@ -16,24 +16,21 @@ export default defineComponent({
     const data = reactive({
       tempList: [],
       // Function can write here
+      fetchList: async () => {
+        const res = await request('videos', 'get')
+        console.log('res: ', res);
+      },
     })
     const refData = toRefs(data);
+
+    (() => {
+      data.fetchList()
+    })
 
     return {
       ...refData
     }
   },
-  methods: {
-    async fetch() {
-      const res = await request('videos', 'get')
-      this.demo = res
-      console.log('res: ', res);
-    },
-  },
-  created() {
-    console.log('get into created')
-    this.fetch()
-  }
 })
 </script>
 
