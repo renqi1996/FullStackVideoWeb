@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onUnmounted, reactive, toRefs }from 'vue';
+import { defineComponent, onBeforeMount, onMounted, reactive, toRefs }from 'vue';
 import request from '../../utils/api/axios';
 
 export default defineComponent({
@@ -23,8 +23,13 @@ export default defineComponent({
     })
     const refData = toRefs(data);
 
-    (() => {
-      data.fetchList()
+    onBeforeMount(() => {
+      console.log('1111');
+      data.fetchList();
+    });
+
+    onMounted(() => {
+      console.log('222');
     })
 
     return {
