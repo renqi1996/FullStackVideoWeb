@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Main from '../views/Main.vue'
 import VideoList from '../views/video/List.vue'
+import VideoEdit from '../views/video/edit.vue'
 
 const routes = [
   {
@@ -17,7 +18,18 @@ const routes = [
         name: 'videoList',
         path: '/video/list',
         component: VideoList,
-      }
+      },
+      {
+        name: 'videoEdit',
+        path: '/video/edit/:id',
+        component: VideoEdit,
+        props: true,
+      },
+      {
+        name: 'videoCreate',
+        path: '/video/edit',
+        component: VideoEdit,
+      },
     ]
   },
   // {
