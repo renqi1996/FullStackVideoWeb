@@ -24,7 +24,7 @@ export default defineComponent({
   name: 'VideoList',
   setup() {
     const data = reactive({
-      tempList: [],
+      tempList: [] as any,
       // Function can write here,
       fields: {
         _id: {
