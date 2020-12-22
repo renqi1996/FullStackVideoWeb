@@ -21,7 +21,7 @@
       </el-menu>
     </el-aside>
     <el-container>
-      <el-header>Vue 3 Admin</el-header>
+      <!-- <el-header>Vue 3 Admin</el-header> -->
       <el-main>
         <router-view :key="$route.path"></router-view>
       </el-main>

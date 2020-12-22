@@ -9,8 +9,22 @@
         :prop="name"
         :key="name"
         :label="field.label"
-        :width="field.width">
+        :width="field.width"
+        >
       </el-table-column>
+      <el-table-column
+          label="操作"
+          :width="200"
+          fixed="right">
+          <template v-slot="{row}">
+            <el-button type="primary" size="small" @click="$router.push(`/video/edit/${row._id}`)">
+              编辑
+            </el-button>
+            <el-button type="waring" size="small">
+              删除
+            </el-button>
+          </template>
+        </el-table-column>
     </el-table>
   </div>
 </template>
@@ -35,7 +49,7 @@ export default defineComponent({
         },
         cover: {
           label: '视频封面',
-        }
+        },
       },
       fetchList: async () => {
         const list = await fetchVideoList();
